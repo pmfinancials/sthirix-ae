@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sthirix — CMA Licensed Forex Introduction & Promotion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #B8943F;
+    --gold-light: #D4AF6A;
+    --gold-pale: #F5EED8;
+    --ink: #0E1117;
+    --ink-mid: #2A2E3A;
+    --ink-soft: #4A4F60;
+    --steel: #6B7280;
+    --border: rgba(184,148,63,0.2);
+    --bg: #F9F7F3;
+    --white: #FFFFFF;
+    --danger-text: #7A1F1F;
+    --danger-bg: #FEF2F2;
+    --danger-border: #FCA5A5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  /* ─── REGULATORY BANNER ─── */
+  .reg-banner {
+    background: var(--ink);
+    color: rgba(255,255,255,0.75);
+    font-size: 12px;
+    text-align: center;
+    padding: 9px 20px;
+    letter-spacing: 0.03em;
+  }
+  .reg-banner strong { color: var(--gold-light); font-weight: 500; }
+
+  /* ─── NAV ─── */
+  nav {
+    background: var(--white);
+    border-bottom: 0.5px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .logo span { color: var(--gold); }
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+    align-items: center;
+  }
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--ink-soft);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold);
+    color: var(--white) !important;
+    padding: 9px 22px;
+    border-radius: 2px;
+    font-size: 12px !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase;
+    font-weight: 500 !important;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; color: var(--ink) !important; }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 88vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 0 5%;
+    gap: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    right: -120px;
+    top: -120px;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(184,148,63,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-content { max-width: 560px; }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold-pale);
+    border: 0.5px solid rgba(184,148,63,0.4);
+    border-radius: 2px;
+    padding: 6px 14px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+  }
+  .shield-icon { width: 14px; height: 14px; fill: var(--gold); }
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 5vw, 64px);
+    font-weight: 500;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+  h1 em { font-style: italic; color: var(--gold); }
+  .hero-sub {
+    font-size: 17px;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    margin-bottom: 36px;
+    max-width: 460px;
+  }
+  .cta-group { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--white);
+    padding: 14px 32px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold); }
+  .btn-secondary {
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 2px;
+  }
+  .hero-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .stat-card {
+    background: var(--white);
+    border: 0.5px solid var(--border);
+    border-radius: 4px;
+    padding: 22px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .stat-label { font-size: 12px; color: var(--steel); letter-spacing: 0.06em; text-transform: uppercase; }
+  .stat-value { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 600; color: var(--ink); }
+  .stat-value.gold { color: var(--gold); }
+  .license-card {
+    background: var(--ink);
+    border-radius: 4px;
+    padding: 28px;
+    color: var(--white);
+  }
+  .license-card h3 { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 14px; }
+  .license-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 0.5px solid rgba(255,255,255,0.1); font-size: 13px; }
+  .license-row:last-child { border-bottom: none; }
+  .license-row span:first-child { color: rgba(255,255,255,0.55); }
+  .license-row span:last-child { font-weight: 500; }
+
+  /* ─── RISK WARNING ─── */
+  .risk-warning {
+    background: var(--danger-bg);
+    border: 1px solid var(--danger-border);
+    border-radius: 4px;
+    padding: 18px 24px;
+    margin: 0 5% 0;
+  }
+  .risk-warning h4 {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--danger-text);
+    margin-bottom: 6px;
+  }
+  .risk-warning p {
+    font-size: 13px;
+    color: var(--danger-text);
+    line-height: 1.6;
+  }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 90px 5%; }
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .section-intro {
+    font-size: 16px;
+    color: var(--ink-soft);
+    max-width: 600px;
+    line-height: 1.8;
+    margin-bottom: 50px;
+  }
+
+  /* ─── ABOUT ─── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .about-text p { color: var(--ink-soft); line-height: 1.85; margin-bottom: 18px; font-size: 15px; }
+  .about-aside { display: flex; flex-direction: column; gap: 18px; }
+  .pillar {
+    border-left: 2px solid var(--gold);
+    padding-left: 20px;
+  }
+  .pillar h4 { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+  .pillar p { font-size: 13px; color: var(--steel); line-height: 1.6; }
+
+  /* ─── SERVICES ─── */
+  .services-bg { background: var(--white); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 0.5px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .service-item {
+    background: var(--white);
+    padding: 36px 30px;
+  }
+  .service-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--gold-pale);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .service-icon svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .service-item h3 { font-size: 16px; font-weight: 500; margin-bottom: 10px; color: var(--ink); }
+  .service-item p { font-size: 13px; color: var(--steel); line-height: 1.7; }
+  .service-note {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ─── COMPLIANCE ─── */
+  .compliance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+  }
+  .compliance-items { display: flex; flex-direction: column; gap: 20px; }
+  .comp-item {
+    background: var(--white);
+    border: 0.5px solid var(--border);
+    border-radius: 4px;
+    padding: 22px 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .comp-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--gold-pale);
+    min-width: 36px;
+    line-height: 1;
+    margin-top: 2px;
+  }
+  .comp-item h4 { font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+  .comp-item p { font-size: 13px; color: var(--steel); line-height: 1.6; }
+  .compliance-certs {
+    background: var(--ink);
+    border-radius: 4px;
+    padding: 36px;
+    color: var(--white);
+    position: sticky;
+    top: 100px;
+  }
+  .compliance-certs h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; margin-bottom: 6px; }
+  .compliance-certs p { font-size: 13px; color: rgba(255,255,255,0.55); margin-bottom: 28px; }
+  .cert-badge {
+    background: rgba(184,148,63,0.12);
+    border: 0.5px solid rgba(184,148,63,0.3);
+    border-radius: 2px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+  }
+  .cert-badge .cert-title { font-size: 13px; font-weight: 500; color: var(--gold-light); }
+  .cert-badge .cert-detail { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 3px; }
+  .verify-link {
+    display: block;
+    margin-top: 24px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border-top: 0.5px solid rgba(255,255,255,0.1);
+    padding-top: 18px;
+  }
+  .verify-link:hover { color: var(--gold-light); }
+
+  /* ─── MARKETS ─── */
+  .markets-bg { background: var(--white); }
+  .markets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .market-card {
+    border: 0.5px solid var(--border);
+    border-radius: 4px;
+    padding: 24px 20px;
+    text-align: center;
+    background: var(--bg);
+  }
+  .market-card .pair { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--ink); }
+  .market-card .desc { font-size: 12px; color: var(--steel); margin-top: 4px; }
+  .market-disclaimer {
+    background: var(--gold-pale);
+    border: 0.5px solid rgba(184,148,63,0.3);
+    border-radius: 4px;
+    padding: 16px 20px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .market-disclaimer strong { color: var(--ink); }
+
+  /* ─── CONTACT ─── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    width: 100%;
+    background: var(--white);
+    border: 0.5px solid rgba(0,0,0,0.18);
+    border-radius: 2px;
+    padding: 12px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .contact-form input:focus,
+  .contact-form select:focus,
+  .contact-form textarea:focus { border-color: var(--gold); }
+  .contact-form textarea { height: 110px; resize: vertical; }
+  .contact-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .submit-btn {
+    width: 100%;
+    background: var(--gold);
+    color: var(--white);
+    border: none;
+    padding: 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .submit-btn:hover { background: var(--ink); }
+  .contact-info { display: flex; flex-direction: column; gap: 24px; }
+  .info-item h4 { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+  .info-item p { font-size: 14px; color: var(--ink-soft); line-height: 1.7; }
+  .info-item a { color: var(--ink); text-decoration: none; }
+  .info-item a:hover { color: var(--gold); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.55);
+    padding: 60px 5% 30px;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 50px;
+  }
+  .footer-brand .logo { color: var(--white); font-size: 26px; }
+  .footer-brand p { font-size: 13px; margin-top: 14px; line-height: 1.75; max-width: 300px; }
+  .footer-col h5 { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 16px; }
+  .footer-col a { display: block; font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--gold-light); }
+  .footer-divider { border: none; border-top: 0.5px solid rgba(255,255,255,0.1); margin-bottom: 28px; }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .footer-legal { font-size: 12px; line-height: 1.8; max-width: 700px; }
+  .footer-legal strong { color: rgba(255,255,255,0.7); display: block; margin-bottom: 6px; }
+  .footer-reg { font-size: 12px; text-align: right; min-width: 200px; }
+  .footer-reg .reg-num { color: var(--gold-light); font-size: 14px; font-weight: 500; display: block; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; padding: 60px 5%; }
+    .hero-visual { display: none; }
+    .about-grid, .compliance-grid, .contact-grid, .footer-top { grid-template-columns: 1fr; gap: 36px; }
+    .compliance-certs { position: static; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Regulatory Banner -->
+<div class="reg-banner">
+  <strong>Regulated Entity:</strong> &nbsp;Sthirix Financial Services LLC &nbsp;|&nbsp; UAE Capital Market Authority (CMA) &nbsp;|&nbsp; CAT 5 License — Introduction & Promotion &nbsp;|&nbsp; <strong>CMA License No: [YOUR LICENSE NUMBER]</strong>
+</div>
+
+<!-- Navigation -->
+<nav>
+  <a href="#" class="logo">STHI<span>R</span>IX</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#compliance">Compliance</a></li>
+    <li><a href="#markets">Markets</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <svg class="shield-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L4 6v6c0 5.5 3.8 10.7 8 12 4.2-1.3 8-6.5 8-12V6l-8-4z"/>
+      </svg>
+      CMA Licensed — UAE Capital Market Authority
+    </div>
+    <h1>Your Gateway to <em>Global Forex</em> Markets</h1>
+    <p class="hero-sub">Sthirix connects UAE-based investors with regulated global forex trading opportunities. We are a licensed introduction and promotion firm under the UAE Capital Market Authority, Category 5.</p>
+    <div class="cta-group">
+      <a href="#contact" class="btn-primary">Speak to an Advisor</a>
+      <a href="#compliance" class="btn-secondary">View Our License</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="stat-card">
+      <div>
+        <div class="stat-label">Regulatory Status</div>
+        <div class="stat-value">Active</div>
+      </div>
+      <div>
+        <div class="stat-label">License Category</div>
+        <div class="stat-value gold">CAT 5</div>
+      </div>
+    </div>
+    <div class="license-card">
+      <h3>License Details</h3>
+      <div class="license-row">
+        <span>Authority</span>
+        <span>UAE Capital Market Authority</span>
+      </div>
+      <div class="license-row">
+        <span>Category</span>
+        <span>5 — Introduction & Promotion</span>
+      </div>
+      <div class="license-row">
+        <span>Activity Type</span>
+        <span>Forex Introduction</span>
+      </div>
+      <div class="license-row">
+        <span>Jurisdiction</span>
+        <span>United Arab Emirates</span>
+      </div>
+      <div class="license-row">
+        <span>License No.</span>
+        <span style="color: var(--gold-light);">[YOUR LICENSE NO.]</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Risk Warning -->
+<div class="risk-warning">
+  <h4>⚠ Risk Warning</h4>
+  <p><strong>Trading foreign exchange (forex) on margin carries a high level of risk and may not be suitable for all investors.</strong> The high degree of leverage available in forex trading can work against you as well as for you. Before deciding to trade, you should carefully consider your investment objectives, level of experience, and risk appetite. You could sustain a loss of some or all of your initial investment. <strong>Sthirix Financial Services LLC is licensed by the UAE Capital Market Authority (CMA) under Category 5 for introduction and promotion activities only.</strong> We do not execute trades, hold client funds, or provide portfolio management services. All trading is conducted through separately licensed executing brokers.</p>
+</div>
+
+<!-- About -->
+<section id="about">
+  <div class="section-label">About Sthirix</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <h2>Regulated Introduction. Transparent by Design.</h2>
+      <p>Sthirix Financial Services LLC is a UAE mainland company licensed and regulated by the Capital Market Authority (CMA) under Category 5 for financial introduction and promotion activities. We operate under the framework established by Federal Decree Law No. 33 of 2023.</p>
+      <p>Our role is to introduce qualified clients to regulated global forex brokers and provide market information, educational resources, and promotional services — all within the bounds of our CMA mandate. We never execute trades, hold client funds, or manage investment portfolios.</p>
+      <p>As a Category 5 licensee, we are committed to full transparency about the scope and limitations of our regulated activities. Every client engagement is governed by CMA conduct of business requirements.</p>
+    </div>
+    <div class="about-aside">
+      <div class="pillar">
+        <h4>Regulated Activity Only</h4>
+        <p>Our CMA CAT 5 license authorises introduction and promotion activities exclusively. We do not execute orders or hold client assets.</p>
+      </div>
+      <div class="pillar">
+        <h4>UAE Mainland Entity</h4>
+        <p>Sthirix is incorporated in the UAE mainland, subject to full CMA supervisory jurisdiction and FDL33 requirements.</p>
+      </div>
+      <div class="pillar">
+        <h4>KYC & AML Compliant</h4>
+        <p>We maintain robust Know Your Customer and Anti-Money Laundering policies in accordance with UAE Central Bank and CMA guidance.</p>
+      </div>
+      <div class="pillar">
+        <h4>Client-First Conduct</h4>
+        <p>All promotions, introductions, and materials meet the CMA's fair, clear, and not misleading standard for financial communications.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="services-bg">
+  <div class="section-label">Our Services</div>
+  <h2>What We Do — and What We Don't</h2>
+  <p class="section-intro">As a CMA Category 5 licensed firm, our activities are specifically defined. Here is a clear overview of our regulated services and the important limitations that apply.</p>
+  <div class="services-grid">
+    <div class="service-item">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <h3>Client Introduction</h3>
+      <p>We introduce qualified individuals and entities to regulated, internationally licensed forex brokers. Introductions are made only to brokers that meet our due diligence standards.</p>
+      <span class="service-note">✓ Licensed Activity</span>
+    </div>
+    <div class="service-item">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M11 5H6a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-5m-1.414-9.414a2 2 0 1 1 2.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+      </div>
+      <h3>Financial Promotion</h3>
+      <p>We produce and distribute CMA-compliant promotional materials for forex products and services. All materials are reviewed to ensure they are fair, clear, and not misleading.</p>
+      <span class="service-note">✓ Licensed Activity</span>
+    </div>
+    <div class="service-item">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      </div>
+      <h3>Market Information & Education</h3>
+      <p>We provide general forex market information, educational content, and research summaries. This is informational only and does not constitute personalised investment advice.</p>
+      <span class="service-note">✓ Licensed Activity</span>
+    </div>
+    <div class="service-item" style="background: #FEF9F0; border-left: 3px solid var(--gold);">
+      <div class="service-icon" style="background: rgba(184,148,63,0.1);">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      </div>
+      <h3>Important Limitations</h3>
+      <p>Under our CAT 5 license, Sthirix <strong>does not</strong> execute trades, hold or manage client funds, provide personalised investment advice, or operate a trading platform. These activities require a separate CMA license.</p>
+      <span class="service-note" style="color: var(--ink-soft);">Scope Boundary</span>
+    </div>
+  </div>
+</section>
+
+<!-- Compliance -->
+<section id="compliance">
+  <div class="section-label">Regulatory Compliance</div>
+  <div class="compliance-grid">
+    <div>
+      <h2>Built on a Foundation of Compliance</h2>
+      <p class="section-intro">Sthirix operates within the comprehensive regulatory framework of the UAE Capital Market Authority. Our compliance programme is aligned with FDL33 and the SCA Rulebook (Decision No. 13/R.M of 2021).</p>
+      <div class="compliance-items">
+        <div class="comp-item">
+          <div class="comp-num">01</div>
+          <div>
+            <h4>CMA Licensing</h4>
+            <p>Fully licensed under UAE CMA Category 5 for introduction and promotion of financial services. License is time-limited, renewable, and subject to ongoing compliance requirements.</p>
+          </div>
+        </div>
+        <div class="comp-item">
+          <div class="comp-num">02</div>
+          <div>
+            <h4>FDL33 Framework Compliance</h4>
+            <p>Our conduct of business aligns with Federal Decree Law No. 33 of 2023, including conduct standards, disclosure requirements, and market abuse prevention provisions.</p>
+          </div>
+        </div>
+        <div class="comp-item">
+          <div class="comp-num">03</div>
+          <div>
+            <h4>AML / KYC Procedures</h4>
+            <p>Robust client onboarding procedures including identity verification, risk profiling, and source of funds checks, consistent with UAE Federal AML Law and CMA requirements.</p>
+          </div>
+        </div>
+        <div class="comp-item">
+          <div class="comp-num">04</div>
+          <div>
+            <h4>Fair Communication Standards</h4>
+            <p>All financial promotions are fair, clear, and not misleading. Risk warnings are prominently displayed in all marketing and client-facing materials.</p>
+          </div>
+        </div>
+        <div class="comp-item">
+          <div class="comp-num">05</div>
+          <div>
+            <h4>Complaints Handling</h4>
+            <p>Clients may submit complaints to our Compliance Officer or directly to the UAE CMA. All complaints are acknowledged within 5 business days and resolved within 30 days.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="compliance-certs">
+        <h3>Regulatory Credentials</h3>
+        <p>Verify our license directly with the UAE CMA register</p>
+        <div class="cert-badge">
+          <div class="cert-title">UAE Capital Market Authority</div>
+          <div class="cert-detail">Category 5 — Financial Introduction & Promotion</div>
+          <div class="cert-detail" style="margin-top: 6px; color: var(--gold-light);">License No: [YOUR CMA LICENSE NO.]</div>
+        </div>
+        <div class="cert-badge">
+          <div class="cert-title">Regulatory Framework</div>
+          <div class="cert-detail">Federal Decree Law No. 33 of 2023</div>
+          <div class="cert-detail">SCA Rulebook — Board Decision No. 13/R.M of 2021</div>
+        </div>
+        <div class="cert-badge">
+          <div class="cert-title">Compliance Standards</div>
+          <div class="cert-detail">UAE Federal AML Law No. 20 of 2018</div>
+          <div class="cert-detail">UAE Central Bank AML/CFT Guidelines</div>
+        </div>
+        <div class="cert-badge">
+          <div class="cert-title">Data Protection</div>
+          <div class="cert-detail">UAE Federal Law No. 45 of 2021 (PDPL)</div>
+        </div>
+        <a href="https://www.cma.gov.ae" target="_blank" class="verify-link">Verify on CMA Official Register → cma.gov.ae</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Markets -->
+<section id="markets" class="markets-bg">
+  <div class="section-label">Markets We Introduce</div>
+  <h2>Global Forex Markets</h2>
+  <p class="section-intro">Through our relationships with regulated executing brokers, we introduce clients to a broad range of forex currency pairs. All trading is conducted by the executing broker — not Sthirix.</p>
+  <div class="markets-grid">
+    <div class="market-card"><div class="pair">EUR/USD</div><div class="desc">Euro / US Dollar</div></div>
+    <div class="market-card"><div class="pair">GBP/USD</div><div class="desc">Pound / US Dollar</div></div>
+    <div class="market-card"><div class="pair">USD/JPY</div><div class="desc">US Dollar / Yen</div></div>
+    <div class="market-card"><div class="pair">AUD/USD</div><div class="desc">Australian Dollar</div></div>
+    <div class="market-card"><div class="pair">USD/CHF</div><div class="desc">Dollar / Swiss Franc</div></div>
+    <div class="market-card"><div class="pair">USD/AED</div><div class="desc">Dollar / UAE Dirham</div></div>
+  </div>
+  <div class="market-disclaimer">
+    <strong>Important:</strong> The currency pairs listed above are examples of markets accessible through the regulated executing brokers to whom we make introductions. Sthirix does not operate a trading platform, does not execute trades on behalf of clients, and does not hold client funds. All trading activity is the responsibility of the individual client and the executing broker. Past performance is not indicative of future results. Trading forex involves significant risk of loss.
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" style="background: var(--bg);">
+  <div class="section-label">Get in Touch</div>
+  <h2>Speak to Our Team</h2>
+  <p class="section-intro">For regulated introduction enquiries, compliance questions, or general information about our services, contact us below. All enquiries are handled by qualified staff.</p>
+  <div class="contact-grid">
+    <div class="contact-form">
+      <div class="form-row">
+        <input type="text" placeholder="First Name" />
+        <input type="text" placeholder="Last Name" />
+      </div>
+      <input type="email" placeholder="Email Address" />
+      <input type="tel" placeholder="Phone Number (UAE +971...)" />
+      <select>
+        <option value="" disabled selected>Enquiry Type</option>
+        <option>Client Introduction Enquiry</option>
+        <option>Compliance / Regulatory Question</option>
+        <option>General Information</option>
+        <option>Complaints / Feedback</option>
+        <option>Partnership Enquiry</option>
+      </select>
+      <textarea placeholder="Your message..."></textarea>
+      <p style="font-size: 12px; color: var(--steel); margin-bottom: 14px; line-height: 1.6;">By submitting this form, you confirm you have read our Risk Warning and understand that Sthirix is licensed for introduction and promotion only. Your data will be processed in accordance with our Privacy Policy and UAE Federal PDPL Law No. 45 of 2021.</p>
+      <button class="submit-btn" type="button">Submit Enquiry</button>
+    </div>
+    <div class="contact-info">
+      <div class="info-item">
+        <h4>Office Address</h4>
+        <p>Sthirix Financial Services LLC<br>[Office Address, Floor, Building]<br>Dubai, United Arab Emirates</p>
+      </div>
+      <div class="info-item">
+        <h4>Email</h4>
+        <p><a href="mailto:info@sthirix.com">info@sthirix.com</a><br><a href="mailto:compliance@sthirix.com">compliance@sthirix.com</a></p>
+      </div>
+      <div class="info-item">
+        <h4>Phone</h4>
+        <p><a href="tel:+971000000000">+971 [XX XXX XXXX]</a></p>
+      </div>
+      <div class="info-item">
+        <h4>CMA License Number</h4>
+        <p style="font-weight: 500; color: var(--gold);">[YOUR CMA LICENSE NUMBER]</p>
+        <p style="font-size: 12px;">Category 5 — Introduction & Promotion<br>Verify at <a href="https://www.cma.gov.ae" target="_blank">cma.gov.ae</a></p>
+      </div>
+      <div class="info-item">
+        <h4>Complaints</h4>
+        <p style="font-size: 13px;">Clients who are not satisfied with our handling of a complaint have the right to escalate to the <strong>UAE Capital Market Authority</strong>:<br><a href="https://www.cma.gov.ae" target="_blank">www.cma.gov.ae</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#" class="logo">STHI<span style="color: var(--gold);">R</span>IX</a>
+      <p>Sthirix Financial Services LLC is licensed and regulated by the UAE Capital Market Authority (CMA) under Category 5 for the introduction and promotion of financial services. We do not execute trades, hold client funds, or provide investment advice.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigation</h5>
+      <a href="#about">About Us</a>
+      <a href="#services">Our Services</a>
+      <a href="#compliance">Compliance</a>
+      <a href="#markets">Markets</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h5>Legal & Compliance</h5>
+      <a href="#">Risk Warning</a>
+      <a href="#">Privacy Policy (PDPL)</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">AML Policy</a>
+      <a href="#">Complaints Procedure</a>
+      <a href="https://www.cma.gov.ae" target="_blank">CMA Official Website</a>
+    </div>
+  </div>
+  <hr class="footer-divider">
+  <div class="footer-bottom">
+    <div class="footer-legal">
+      <strong>Important Legal Notice & Risk Disclosure</strong>
+      Sthirix Financial Services LLC is licensed by the Capital Market Authority (CMA) of the United Arab Emirates under Category 5 (Introduction and Promotion). Our activities are limited to introducing clients to regulated forex brokers and distributing regulated financial promotions. We do not execute orders, manage portfolios, or hold client funds. Trading foreign exchange carries significant risk and is not suitable for all investors. You may lose more than your initial investment. This website does not constitute investment advice. Past performance is not indicative of future results. All financial promotions on this website have been prepared in accordance with CMA conduct of business requirements and are directed only at persons who are eligible to receive such communications under applicable UAE law.
+    </div>
+    <div class="footer-reg">
+      <span class="reg-num">CMA CAT 5</span>
+      <span style="font-size: 12px; color: rgba(255,255,255,0.4);">UAE Capital Market Authority<br>Introduction & Promotion License<br>© 2025 Sthirix Financial Services LLC</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
