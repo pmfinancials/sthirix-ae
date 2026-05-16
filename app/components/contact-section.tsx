@@ -48,7 +48,7 @@ export function ContactSection() {
               <p>
                 Sthirix Financial Services LLC
                 <br />
-                [Office Address, Floor, Building]
+                306, Aspect Tower, Zone-B, Business Bay,
                 <br />
                 Dubai, United Arab Emirates
               </p>
@@ -56,17 +56,14 @@ export function ContactSection() {
             <div className="info-item panel">
               <h4>Email</h4>
               <p>
-                <a href="mailto:info@sthirix.com">info@sthirix.com</a>
+                <a href="mailto:compliance@sthirix.ae">compliance@sthirix.ae</a>
                 <br />
-                <a href="mailto:compliance@sthirix.com">
-                  compliance@sthirix.com
-                </a>
               </p>
             </div>
             <div className="info-item panel">
               <h4>Phone</h4>
               <p>
-                <a href="tel:+971000000000">+971 [XX XXX XXXX]</a>
+                <a href="tel:+971000000000">+971 44 26 8300</a>
               </p>
             </div>
             <div className="info-item panel">
@@ -75,8 +72,8 @@ export function ContactSection() {
                 Clients who are not satisfied with our handling of a complaint
                 have the right to escalate to the UAE Capital Market Authority.
                 <br />
-                <a href="https://www.cma.gov.ae" target="_blank" rel="noreferrer">
-                  www.cma.gov.ae
+                <a href="https://www.sca.gov.ae" target="_blank" rel="noreferrer">
+                  CMA Website
                 </a>
               </p>
             </div>

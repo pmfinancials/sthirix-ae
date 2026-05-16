@@ -208,7 +208,7 @@ a {
 .split-showcase {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
-  gap: 1.5rem;
+  gap: 2rem;
   align-items: start;
 }
 
@@ -388,10 +388,11 @@ h2 {
 
 .pillar-grid {
   grid-template-columns: 1fr 1fr;
+  gap: 1.35rem;
 }
 
 .pillar-card {
-  padding: 1.35rem;
+  padding: 1.6rem;
   border-radius: 22px;
   border: 1px solid rgba(255, 255, 255, 0.06);
   background:
@@ -550,6 +551,14 @@ h2 {
 
 .section-top-gap {
   margin-top: 1.5rem;
+}
+
+#about .section-header {
+  margin-bottom: 2.25rem;
+}
+
+#about .about-story {
+  padding: 1.9rem;
 }
 
 .site-footer {

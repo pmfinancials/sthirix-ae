@@ -27,45 +27,6 @@ export function ComplianceSection() {
             ))}
           </div>
 
-          <aside className="compliance-certs panel">
-            <div className="panel-kicker">Regulatory Credentials</div>
-            <h3>Direct, verifiable, and easy to audit.</h3>
-            <div className="cert-badge">
-              <div className="cert-title">UAE Capital Market Authority</div>
-              <div className="cert-detail">
-                Category 5 - Financial Introduction & Promotion
-              </div>
-              <div className="cert-detail cert-highlight">
-                License No: [YOUR CMA LICENSE NO.]
-              </div>
-            </div>
-            <div className="cert-badge">
-              <div className="cert-title">Regulatory Framework</div>
-              <div className="cert-detail">
-                Federal Decree Law No. 33 of 2023
-              </div>
-              <div className="cert-detail">
-                SCA Rulebook - Board Decision No. 13/R.M of 2021
-              </div>
-            </div>
-            <div className="cert-badge">
-              <div className="cert-title">Related Standards</div>
-              <div className="cert-detail">
-                UAE Federal AML Law No. 20 of 2018
-              </div>
-              <div className="cert-detail">
-                UAE Federal Law No. 45 of 2021 (PDPL)
-              </div>
-            </div>
-            <a
-              href="https://www.cma.gov.ae"
-              target="_blank"
-              rel="noreferrer"
-              className="verify-link"
-            >
-              Verify on CMA Official Register
-            </a>
-          </aside>
         </div>
       </div>
     </section>

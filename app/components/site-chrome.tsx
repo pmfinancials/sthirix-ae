@@ -125,11 +125,7 @@ export function SiteFooter() {
         <div className="footer-reg">
           <span className="reg-num">CMA CAT 5</span>
           <span className="footer-reg-copy">
-            (c) 2025 Sthirix Financial Services LLC
-            <br />
-            UAE Capital Market Authority
-            <br />
-            Introduction & Promotion License
+            &copy; 2026 Sthirix Financial Services LLC. All rights reserved.
           </span>
         </div>
       </div>
