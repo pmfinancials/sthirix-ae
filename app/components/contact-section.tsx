@@ -46,17 +46,23 @@ export function ContactSection() {
         body: JSON.stringify(formValues),
       });
 
-      const data = (await response.json()) as { error?: string; message?: string };
+      const data = (await response.json()) as {
+        error?: string;
+        message?: string;
+      };
 
       if (!response.ok) {
-        throw new Error(data.error ?? "Unable to submit your enquiry right now.");
+        throw new Error(
+          data.error ?? "Unable to submit your enquiry right now.",
+        );
       }
 
       setFormValues(initialFormValues);
       setStatus({
         type: "success",
         message:
-          data.message ?? "Your enquiry has been sent successfully. Our team will be in touch.",
+          data.message ??
+          "Your enquiry has been sent successfully. Our team will be in touch.",
       });
     } catch (error) {
       setStatus({
@@ -150,13 +156,19 @@ export function ContactSection() {
                   enquiryType: event.target.value,
                 }))
               }
+              className="bg-black text-white border border-white/20"
               required
             >
-              <option value="" disabled>
+              <option value="" disabled className="text-gray-400">
                 Enquiry Type
               </option>
+
               {enquiryOptions.map((option) => (
-                <option key={option} value={option}>
+                <option
+                  key={option}
+                  value={option}
+                  className="bg-black text-white"
+                >
                   {option}
                 </option>
               ))}
@@ -178,7 +190,11 @@ export function ContactSection() {
               is licensed for introduction and promotion only. Your data will be
               processed in accordance with applicable privacy requirements.
             </p>
-            <button className="submit-btn" type="submit" disabled={isSubmitting}>
+            <button
+              className="submit-btn"
+              type="submit"
+              disabled={isSubmitting}
+            >
               {isSubmitting ? "Sending..." : "Submit Enquiry"}
             </button>
             {status.type !== "idle" ? (
@@ -222,7 +238,11 @@ export function ContactSection() {
                 Clients who are not satisfied with our handling of a complaint
                 have the right to escalate to the UAE Capital Market Authority.
                 <br />
-                <a href="https://www.sca.gov.ae" target="_blank" rel="noreferrer">
+                <a
+                  href="https://www.sca.gov.ae"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   CMA Website
                 </a>
               </p>

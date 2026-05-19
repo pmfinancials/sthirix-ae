@@ -4,6 +4,7 @@ import { ComplianceSection } from "./components/compliance-section";
 import { ContactSection } from "./components/contact-section";
 import { MarketsSection } from "./components/markets-section";
 import { ServicesSection } from "./components/services-section";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -11,20 +12,33 @@ export default function Home() {
       <section id="home" className="home-hero">
         <div className="content-width home-hero-grid">
           <div className="hero-copy hero-copy-wide">
-            <div>
-              <div className="hero-badge">
-                CMA Licensed - UAE Capital Market Authority
+            <div className="flex items-center justify-between gap-16 w-full">
+              <div className="max-w-[700px]">
+                <div className="hero-badge">
+                  CMA Licensed - UAE Capital Market Authority
+                </div>
+
+                <h1>
+                  Built for Global
+                  <br />
+                  <span>Traders.</span>
+                </h1>
+
+                <p className="hero-sub mt-6">
+                  Sthirix connects UAE-based investors with regulated global
+                  forex trading opportunities. We operate as a Category 5
+                  introduction and promotion firm under the UAE Capital Market
+                  Authority.
+                </p>
               </div>
-              <h1>
-                Built for Global
-                <br />
-                <span>Traders.</span>
-              </h1>
-              <p className="hero-sub">
-                Sthirix connects UAE-based investors with regulated global forex
-                trading opportunities. We operate as a Category 5 introduction
-                and promotion firm under the UAE Capital Market Authority.
-              </p>
+
+              {/* <Image
+                src="/Economic Events.jpeg"
+                alt="Sthirix UAE"
+                width={420}
+                height={420}
+                className="rounded-full object-cover"
+              /> */}
             </div>
 
             <div className="cta-group">

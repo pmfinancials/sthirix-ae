@@ -103,7 +103,7 @@ export function SiteFooter() {
         <div className="footer-col">
           <h5>Legal & Compliance</h5>
           <a href="#">Risk Warning</a>
-          <a href="#">Privacy Policy (PDPL)</a>
+          <a href="#">Privacy Policy</a>
           <a href="#">Terms of Use</a>
           <a href="#">Complaints Procedure</a>
           <a href="https://www.sca.gov.ae" target="_blank" rel="noreferrer">
@@ -123,7 +123,6 @@ export function SiteFooter() {
         </div>
 
         <div className="footer-reg">
-          <span className="reg-num">CMA CAT 5</span>
           <span className="footer-reg-copy">
             &copy; 2026 Sthirix Financial Services LLC. All rights reserved.
           </span>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { complianceItems } from "../lib/site-content";
 
 export function ComplianceSection() {
@@ -18,7 +19,9 @@ export function ComplianceSection() {
           <div className="compliance-items">
             {complianceItems.map((item, index) => (
               <div className="comp-item panel" key={item.title}>
-                <div className="comp-num">{String(index + 1).padStart(2, "0")}</div>
+                <div className="comp-num">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
                 <div>
                   <h4>{item.title}</h4>
                   <p>{item.description}</p>
@@ -27,6 +30,13 @@ export function ComplianceSection() {
             ))}
           </div>
 
+          {/* <Image
+            src="/Sthirixae.jpeg"
+            alt="Sthirix UAE"
+            className="rounded-full"
+            width={700}
+            height={800}
+          /> */}
         </div>
       </div>
     </section>
