@@ -191,6 +191,14 @@ a {
   box-shadow: 0 18px 36px rgba(203, 121, 23, 0.28);
 }
 
+.submit-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.72;
+  transform: none;
+  filter: none;
+  box-shadow: 0 12px 28px rgba(203, 121, 23, 0.18);
+}
+
 .home-hero,
 .page-section {
   padding: 2.2rem 0 0;
@@ -541,6 +549,26 @@ h2 {
 .contact-form textarea {
   min-height: 140px;
   resize: vertical;
+}
+
+.form-status {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.92rem;
+}
+
+.form-status.is-success {
+  color: #d6f5d6;
+  background: rgba(58, 122, 58, 0.18);
+  border-color: rgba(96, 180, 96, 0.3);
+}
+
+.form-status.is-error {
+  color: #f0c7c7;
+  background: rgba(122, 31, 31, 0.18);
+  border-color: rgba(203, 121, 23, 0.22);
 }
 
 .form-row {

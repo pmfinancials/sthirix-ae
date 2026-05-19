@@ -106,7 +106,7 @@ export function SiteFooter() {
           <a href="#">Privacy Policy (PDPL)</a>
           <a href="#">Terms of Use</a>
           <a href="#">Complaints Procedure</a>
-          <a href="https://www.cma.gov.ae" target="_blank" rel="noreferrer">
+          <a href="https://www.sca.gov.ae" target="_blank" rel="noreferrer">
             CMA Official Website
           </a>
         </div>
