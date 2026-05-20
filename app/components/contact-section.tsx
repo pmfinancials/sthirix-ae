@@ -156,19 +156,15 @@ export function ContactSection() {
                   enquiryType: event.target.value,
                 }))
               }
-              className="bg-black text-white border border-white/20"
+              className="contact-select"
               required
             >
-              <option value="" disabled className="text-gray-400">
+              <option value="" disabled>
                 Enquiry Type
               </option>
 
               {enquiryOptions.map((option) => (
-                <option
-                  key={option}
-                  value={option}
-                  className="bg-black text-white"
-                >
+                <option key={option} value={option}>
                   {option}
                 </option>
               ))}

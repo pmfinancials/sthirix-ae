@@ -30,13 +30,27 @@ export function ComplianceSection() {
             ))}
           </div>
 
-          {/* <Image
-            src="/Sthirixae.jpeg"
-            alt="Sthirix UAE"
-            className="rounded-full"
-            width={700}
-            height={800}
-          /> */}
+          <div className="compliance-certs">
+            <div className="compliance-visual panel">
+              <div className="panel-kicker">Regulated Presence</div>
+              <h3>Structured oversight and disciplined client communication.</h3>
+              <p className="cert-detail">
+                Every introduction, disclosure, and promotional interaction is
+                framed around scope clarity, regulatory discipline, and client
+                protection expectations.
+              </p>
+
+              <div className="compliance-image-frame">
+                <Image
+                  src="/Sthirixae.jpeg"
+                  alt="Sthirix compliance and regulatory visual"
+                  width={700}
+                  height={820}
+                  className="compliance-image"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

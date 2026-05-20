@@ -12,19 +12,19 @@ export default function Home() {
       <section id="home" className="home-hero">
         <div className="content-width home-hero-grid">
           <div className="hero-copy hero-copy-wide">
-            <div className="flex items-center justify-between gap-16 w-full">
-              <div className="max-w-[700px]">
+            <div className="hero-top">
+              <div className="hero-copy-col">
                 <div className="hero-badge">
                   CMA Licensed - UAE Capital Market Authority
                 </div>
 
                 <h1>
-                  Built for Global
+                  Built for
                   <br />
-                  <span>Traders.</span>
+                  Global <span>Traders.</span>
                 </h1>
 
-                <p className="hero-sub mt-6">
+                <p className="hero-sub">
                   Sthirix connects UAE-based investors with regulated global
                   forex trading opportunities. We operate as a Category 5
                   introduction and promotion firm under the UAE Capital Market
@@ -32,8 +32,18 @@ export default function Home() {
                 </p>
               </div>
 
+              <div className="hero-image-shell">
+                <Image
+                  src="/newimage.png"
+                  alt="Global market activity visual"
+                  width={480}
+                  height={560}
+                  className="hero-image"
+                  priority
+                />
+              </div>
               {/* <Image
-                src="/Economic Events.jpeg"
+                src="/Economic Events.png"
                 alt="Sthirix UAE"
                 width={420}
                 height={420}

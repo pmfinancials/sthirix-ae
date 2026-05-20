@@ -255,8 +255,37 @@ a {
   justify-content: space-between;
 }
 
-.hero-copy > div:first-child {
-  max-width: 980px;
+.hero-top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(380px, 0.98fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-copy-col {
+  max-width: 860px;
+}
+
+.hero-copy-col h1 {
+  max-width: none;
+}
+
+.hero-line {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.hero-image-shell {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 540px;
+  height: auto;
+  object-fit: contain;
 }
 
 .hero-badge,
@@ -327,6 +356,7 @@ h1 span {
 .hero-sub {
   max-width: 56ch;
   font-size: 1.05rem;
+  margin-top: 1.5rem;
 }
 
 .cta-group {
@@ -750,12 +780,33 @@ h2 {
   top: 104px;
 }
 
+.compliance-visual {
+  overflow: hidden;
+}
+
 .compliance-certs h3,
 .panel-title {
   font-size: clamp(1.45rem, 2.6vw, 2rem);
   font-weight: 700;
   line-height: 1.15;
   margin: 0.4rem 0 1.2rem;
+}
+
+.compliance-image-frame {
+  margin-top: 1.4rem;
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(203, 121, 23, 0.2);
+  background:
+    radial-gradient(circle at top, rgba(203, 121, 23, 0.12), transparent 40%),
+    rgba(255, 255, 255, 0.02);
+}
+
+.compliance-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .cert-badge {
@@ -815,6 +866,16 @@ h2 {
   transition:
     border-color 0.2s ease,
     background 0.2s ease;
+}
+
+.contact-select,
+.contact-select option {
+  background-color: #232323;
+  color: var(--text);
+}
+
+.contact-select option:disabled {
+  color: var(--muted-soft);
 }
 
 .contact-form input::placeholder,
@@ -943,6 +1004,19 @@ h2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .hero-top {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-image-shell {
+    justify-content: flex-start;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: 560px;
+  }
+
   .engagement-flow-grid {
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
@@ -1062,11 +1136,19 @@ h2 {
     max-width: none;
   }
 
+  .hero-image-shell {
+    margin-top: 0.5rem;
+  }
+
   .about-pillar-rail {
     grid-template-columns: 1fr;
   }
 
   .about-simple-head h2 {
+    white-space: normal;
+  }
+
+  .hero-line {
     white-space: normal;
   }
 
@@ -1140,6 +1222,10 @@ h2 {
     text-align: center;
     font-size: 0.68rem;
     line-height: 1.4;
+  }
+
+  .hero-top {
+    gap: 1.35rem;
   }
 
   .engagement-flow {
